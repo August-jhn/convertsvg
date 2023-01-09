@@ -1,0 +1,9 @@
+% https://q.uiver.app/?q=WzAsMyxbMCwwLCJBIixbNzgsNjYsNjAsMV1dLFsyLDAsIkIiLFs3OCw2Niw2MCwxXV0sWzIsMiwiQyIsWzc4LDY2LDYwLDFdXSxbMCwxLCIiLDAseyJjb2xvdXIiOls3OCw2Niw2MF0sInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsxLDIsIiIsMCx7ImNvbG91ciI6Wzc4LDY2LDYwXSwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMiwiIiwyLHsiY29sb3VyIjpbNzgsNjYsNjBdLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=
+\[\begin{tikzcd}
+	\textcolor{rgb,255:red,180;green,220;blue,86}{A} && \textcolor{rgb,255:red,180;green,220;blue,86}{B} \\
+	\\
+	&& \textcolor{rgb,255:red,180;green,220;blue,86}{C}
+	\arrow[color={rgb,255:red,180;green,220;blue,86}, two heads, from=1-1, to=1-3]
+	\arrow[color={rgb,255:red,180;green,220;blue,86}, two heads, from=1-3, to=3-3]
+	\arrow[color={rgb,255:red,180;green,220;blue,86}, two heads, from=1-1, to=3-3]
+\end{tikzcd}\]
