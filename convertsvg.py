@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 target = ''
 
@@ -11,9 +12,19 @@ with open('target.txt', 'r') as f:
 
     f.close()
 
+
+def count_figures():
+    count = 0
+    for file in os.listdir(target):
+        name, suffix = os.path.splitext(file)
+        if "figure" in name and "SVG" in suffix.upper():
+            count += 1
+    return count
+
 CMDS = [
     'pdflatex to_convert.tex',
-    'inkscape -o {t}figure.svg to_convert.pdf'.format(t = target),
+    'inkscape -o to_crop.svg to_convert.pdf',
+    'inkscape --batch-process --actions="select-all:all;fit-canvas-to-selection;export-filename:{t}figure_{n}.svg;export-do;" to_crop.svg'.format(t= target, n = count_figures())
     
 ]
 
@@ -21,8 +32,11 @@ DELETESTUFF = [
     'del to_convert.tex',
     'del to_convert.pdf',
     'del to_convert.aux',
-    'del to_convert.log'
+    'del to_convert.log',
+    'defl to_crop.svg'
 ]
+
+
 
 def run_commands():
     for cmd in CMDS:
@@ -31,8 +45,6 @@ def run_commands():
 def delete_stuff():
     for cmd in DELETESTUFF:
         subprocess.run(cmd, shell = True)
-
-    
 
 def main():
 

@@ -1,0 +1,1 @@
+inkscape --batch-process --actions="select-all:all;fit-canvas-to-selection;export-filename:cropped.svg;export-do;export-filename:cropped.svg;export-do;" addition1.svg
